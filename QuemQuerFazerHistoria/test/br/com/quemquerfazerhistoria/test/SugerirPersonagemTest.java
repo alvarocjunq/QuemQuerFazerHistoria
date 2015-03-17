@@ -2,6 +2,7 @@ package br.com.quemquerfazerhistoria.test;
 
 import java.io.File;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import br.com.quemquerfazerhistoria.model.SugerirPersonagem;
@@ -23,7 +24,10 @@ public class SugerirPersonagemTest {
 		
 		File anexo = new File("/home/alvaro/Firefox_wallpaper.png");
 
-		Email.enviaEmail(sp.getEmailremetente(), "Sugestão de personagem", email.toString(), anexo);
+		Assert.assertTrue(Email.enviaEmail( sp.getEmailremetente(),
+											"Sugestão de personagem", 
+											email.toString(), 
+											anexo));
 	}
 
 }

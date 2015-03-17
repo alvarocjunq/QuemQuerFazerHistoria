@@ -25,7 +25,7 @@ public class Email {
 	 * @param remetente
 	 * Separar os destinatarios por virgula
 	 */
-	public static void enviaEmail(String remetente, String assunto, String mensagem, File anexo) {
+	public static boolean enviaEmail(String remetente, String assunto, String mensagem, File anexo) {
 		Properties props = new Properties();
 		final Utils utils = new Utils();
 		/** Parametros de conexao com servidor Gmail */
@@ -106,18 +106,19 @@ public class Email {
 			//-----------------
 			Transport.send(message);
 
+			return true;
 		} catch (MessagingException e) {
         	Log.setErro("-----------------------");
         	Log.setErro("Erro ao enviar email de: " + remetente);
         	Log.setErro("Assunto do e-mail: " + assunto);
         	Log.setErro("-----------------------");
         	Log.setErro("0 - " + e.getMessage());
-			throw new RuntimeException(e);
+			return false;
 		}
 	}
 	
 	/**
-	 * M�todo para enviar email usando HTML, n�o est� sendo usado
+	 * Metodo para enviar email usando HTML, nao está sendo usado
 	 */
 	public void enviaEmailHtml(){
 	    Properties props = System.getProperties();
