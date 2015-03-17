@@ -2,27 +2,28 @@ package br.com.quemquerfazerhistoria.test;
 
 import java.io.File;
 
+import org.junit.Test;
+
 import br.com.quemquerfazerhistoria.model.SugerirPersonagem;
 import br.com.quemquerfazerhistoria.utils.Email;
 
 public class SugerirPersonagemTest {
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
+	@Test
+	public void sugerirUmPersonagemEnviaPorEmail() {
 		SugerirPersonagem sp = new SugerirPersonagem();
 		sp.setEmailremetente("alvarocjunq@teste.com");
 		sp.setPersonagem("Personagem teste");
-		sp.setDescricao("Minha descriÁ„o maluca de chessus");
+		sp.setDescricao("Descri√ß√£o do personagem do usu√°rio");
 		
-		String email = "Personagem: " + sp.getPersonagem();
-		email += "\n\n";
-		email += "DescriÁ„o: " + sp.getDescricao();
+		StringBuilder email = new StringBuilder();
+		email.append("Personagem: " + sp.getPersonagem());
+		email.append("\n\n");
+		email.append("Descri√ß√£o: " + sp.getDescricao());
 		
-		File anexo = new File("C:\\Users\\Alvaro\\Pictures\\Papeis de parede\\618486main_earth_full2.jpg");
+		File anexo = new File("/home/alvaro/Firefox_wallpaper.png");
 
-		Email.enviaEmail(sp.getEmailremetente(), "Sugest„o de personagem", email, anexo);
+		Email.enviaEmail(sp.getEmailremetente(), "Sugest√£o de personagem", email.toString(), anexo);
 	}
 
 }

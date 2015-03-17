@@ -26,13 +26,13 @@ public class RandomController {
 		//Se estiver nulo, instancia
 		this.hg = (this.hg == null ? new HistoriaGerada() : this.hg);
 
-		//Continue sorteando uma história se ela for igual a ultima história gerada
+		//Continue sorteando uma historia se ela for igual a ultima historia gerada
 		while (this.hg.getNivel1id() == this.ultimoNivel1IDRandom){
 			this.hg = new GerarHistoriaAleatoriaService(Utils.conexao(req)).getHistoria();
 		}
 		this.ultimoNivel1IDRandom = this.hg.getNivel1id();
 		
-		//Monta a querystring para um possível copy paste do usuário na barra de endereço
+		//Monta a querystring para um possovel copy paste do usuario na barra de endereco
 		String qs = UtilsController.montaQueryStringHistoriaGerada(req, this.hg);
 		
 		model.addAttribute("objHistoria", this.hg);

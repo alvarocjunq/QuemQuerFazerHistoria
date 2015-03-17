@@ -103,8 +103,8 @@ public class Utils {
 	}
 	
 	/**
-	 * Verifica se a imagem passada é uma imagem aceita pelo framework
-	 * As imagems aceitas, ficam configuradas no arquivo properties separados pos vírgula
+	 * Verifica se a imagem passada Ã© uma imagem aceita pelo framework
+	 * As imagems aceitas, ficam configuradas no arquivo properties separados pos virgula
 	 */
 	public static boolean isImagemValida(String nomeImg)
 	{
@@ -120,7 +120,7 @@ public class Utils {
 	}
 	
 	/**
-	 * Retorna o texto passado por parâmetro, com a primeira letra maiúscula
+	 * Retorna o texto passado por parametro, com a primeira letra maiuscula
 	 * @param texto
 	 * @return
 	 */
@@ -130,7 +130,7 @@ public class Utils {
     }
 	
 	/**
-	 * Gera espaços de acordo com a quantidade informada
+	 * Gera espaï¿½os de acordo com a quantidade informada
 	 * @param qtd
 	 * @return
 	 */
@@ -154,8 +154,8 @@ public class Utils {
 	}
 
 	/**
-	 * Retorna um número aleatório, de 0-N
-	 * @param range = até que número pode ser retornado
+	 * Retorna um nï¿½mero aleatï¿½rio, de 0-N
+	 * @param range = atï¿½ que nï¿½mero pode ser retornado
 	 */
 	public static int getNumRandom(int range)
 	{
@@ -183,7 +183,7 @@ public class Utils {
 	}
 
 	/**
-	 * Retorna a extensão de um arquivo
+	 * Retorna a extensï¿½o de um arquivo
 	 * @param arquivo
 	 * @return
 	 */

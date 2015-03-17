@@ -56,9 +56,6 @@ public class HomeController {
 	@RequestMapping("/pnivel2")
 	public String nivel2(Model model, HttpServletRequest req, int p, int n1/*, int r*/) { 
 		
-		//Se for randomico, pegar um nivel1ID aleatório
-//		if(r==1){n1 = new GerarHistoriaAleatoriaService(Utils.conexao(req)).getNivel1ID(p);}
-		
 		Nivel2DAO nivelDao	= new Nivel2DAO(Utils.conexao(req));
 		List<Nivel2> lstNivel2 = nivelDao.lista(n1);
 		

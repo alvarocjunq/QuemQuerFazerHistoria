@@ -40,11 +40,11 @@ public class RodapeController {
 		if(inseriu)
 		{
 			model.addAttribute("mensagem", "E-mail cadastrado com sucesso!");
-			String mensagem = "O e-mail: " + nw.getEmail() + " acaba de se cadastrar para receber novas histÛrias";
+			String mensagem = String.format("O e-mail: %s acaba de se cadastrar para receber novas hist√≥rias", nw.getEmail());
 			Email.enviaEmail(nw.getEmail(), "Cadastro de newsletter", mensagem, GlobalEnum.ANEXO_VAZIO.getValor());
 		}
 		else
-			model.addAttribute("mensagem", "Seu e-mail n„o pode ser cadastrado, envie um e-mail para " + utils.getProp("emailadministrador"));
+			model.addAttribute("mensagem", String.format("Seu e-mail n√£o pode ser cadastrado, envie um e-mail para %s", utils.getProp("emailadministrador")));
 		
 		return "pNewsletter";
 	}
@@ -91,7 +91,7 @@ public class RodapeController {
 		
 		if(Utils.isBrancoOuNulo(eud.getEmailremetente()) || 
 				Utils.isBrancoOuNulo(eud.getPersonagem()) || 
-				eud.getAnexo().equals(null))
+				eud.getAnexo() == null)
 			return "redirect:penviarumdesenho";
 		
 		Upload up = new Upload();
@@ -103,7 +103,7 @@ public class RodapeController {
 		EnviarUmDesenhoService euds = new EnviarUmDesenhoService();
 		euds.enviar(eud, arquivo);
 
-		//Remove o arquivo tempor·rio
+		//Remove o arquivo temporario
 		up.removerArqTmp(arquivo); 
 		
 		return "redirect:penviarumdesenho";

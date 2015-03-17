@@ -30,16 +30,16 @@ public class ConnectionFactory {
 				connection = DriverManager.getConnection(utils.getProp("conStringMYSQL"), user, senha);
 				break;
 			default:
-				Log.setErro("Não foi configurado o 'databasepadrao' no arquivo properties");
+				Log.setErro("Nao foi configurado o 'databasepadrao' no arquivo properties");
 				break;
 			}
 		}
         catch(SQLException ex) {
-        	Log.setErro("Erro de SQLException - Conexão com o banco");
+        	Log.setErro("Erro de SQLException - Conexao com o banco");
         	Log.setErro(ex.getErrorCode() + " - " + ex.getMessage());
         }
 		catch (ClassNotFoundException e) {
-			Log.setErro("Erro de ClassNotFoundException - Conexão com o banco");
+			Log.setErro("Erro de ClassNotFoundException - Conexao com o banco");
 		}
 		
 		return connection;

@@ -3,6 +3,8 @@ package br.com.quemquerfazerhistoria.test;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import org.springframework.util.Assert;
+
 import br.com.quemquerfazerhistoria.ConnectionFactory;
 import br.com.quemquerfazerhistoria.model.HistoriaGerada;
 import br.com.quemquerfazerhistoria.service.GerarHistoriaAleatoriaService;
@@ -15,8 +17,8 @@ public class GerarHistoriaAleatoriaDAOTest {
 		GerarHistoriaAleatoriaService dao = new GerarHistoriaAleatoriaService(con);
 		HistoriaGerada hg = new HistoriaGerada();
 		hg = dao.getHistoria();
-		System.out.println(hg.getTexto1());
-		System.out.println(hg.getTexto2());
-		System.out.println(hg.getTexto3());
+		
+		Assert.isTrue(hg != null);
+		
 	}
 }

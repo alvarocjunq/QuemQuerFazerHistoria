@@ -23,12 +23,12 @@ public class Email {
 
 	/**
 	 * @param remetente
-	 *            Separar os destinatários por vírgula
+	 * Separar os destinatarios por virgula
 	 */
 	public static void enviaEmail(String remetente, String assunto, String mensagem, File anexo) {
 		Properties props = new Properties();
 		final Utils utils = new Utils();
-		/** Parâmetros de conexão com servidor Gmail */
+		/** Parametros de conexao com servidor Gmail */
 	    props.put("mail.smtp.starttls.enable", true);
 	    props.put("mail.smtp.host", "smtp.gmail.com");
 	    props.put("mail.smtp.user", "username");
@@ -45,7 +45,7 @@ public class Email {
 					}
 				});
 
-		session.setDebug(false);
+		session.setDebug(true);
 
 		try {
 
@@ -54,7 +54,7 @@ public class Email {
 			MimeBodyPart parteTexto = new MimeBodyPart();
 			
 			//-----------------
-		    // Conteúdo da mensagem
+		    // ConteÃºdo da mensagem
 			//-----------------
 			parteTexto.setText(mensagem);
 			mp.addBodyPart(parteTexto);
@@ -90,7 +90,7 @@ public class Email {
 			message.setFrom(new InternetAddress(remetente)); 
 
 			//-----------------
-			// Destinatário(s)
+			// Destinatario(s)
 			//-----------------
 			Address[] toUser = InternetAddress.parse(utils.getProp("emailadministrador"));
 
@@ -102,7 +102,7 @@ public class Email {
 			message.setSubject("[ENVIADO ATRAVES DO SITE] - " + assunto);
 			
 			//-----------------
-			// Método para enviar a mensagem criada
+			// MÃ©todo para enviar a mensagem criada
 			//-----------------
 			Transport.send(message);
 
@@ -117,7 +117,7 @@ public class Email {
 	}
 	
 	/**
-	 * Método para enviar email usando HTML, não está sendo usado
+	 * Mï¿½todo para enviar email usando HTML, nï¿½o estï¿½ sendo usado
 	 */
 	public void enviaEmailHtml(){
 	    Properties props = System.getProperties();
