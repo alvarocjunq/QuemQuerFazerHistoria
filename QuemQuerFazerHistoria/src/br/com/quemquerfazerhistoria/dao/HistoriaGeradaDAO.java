@@ -20,7 +20,8 @@ public class HistoriaGeradaDAO {
 		try {
 			HistoriaGerada hg = new HistoriaGerada();
 			String sql = "SELECT tblPersonagem.Descricao AS Personagem,                             "
-					+"		 CONCAT(tblPersonagem.Tratamento,' ',tblPersonagem.Descricao) as Titulo,	"
+					+"		 tblPersonagem.Tratamento,												"
+					+"		 tblPersonagem.Descricao,												"
 					+"	   	 tblNivel1.CaminhoImagem AS CaminhoImagem1,                             "
 					+"	     tblNivel2.CaminhoImagem AS CaminhoImagem2,                             "
 					+"	     tblNivel3.CaminhoImagem AS CaminhoImagem3,                             "
@@ -51,7 +52,7 @@ public class HistoriaGeradaDAO {
 
 			while (rs.next()) {
 				hg.setPersonagem	(rs.getString("Personagem"));
-				hg.setTitulo		(rs.getString("Titulo"));
+				hg.setTitulo		(rs.getString("Tratamento").concat(" ".concat(rs.getString("Descricao"))));
 				hg.setTexto1		(rs.getString("Texto1"));
 				hg.setTexto2		(rs.getString("Texto2"));
 				hg.setTexto3		(rs.getString("Texto3"));
@@ -73,7 +74,7 @@ public class HistoriaGeradaDAO {
         	Log.setErro("Listar HistoriaGerada");
         	Log.setErro("-----------------------");
         	Log.setErro(e.getErrorCode() + " - " + e.getMessage());
-        	
+        	e.printStackTrace();
         	return null;
 		}
 	}

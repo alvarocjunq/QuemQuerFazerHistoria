@@ -14,7 +14,7 @@ public class UtilsController {
 	
 
 	/**
-	 * Cria a queryString para a página de história gerada
+	 * Cria a queryString para a pï¿½gina de histï¿½ria gerada
 	 * @param req
 	 * @return
 	 */
@@ -31,13 +31,13 @@ public class UtilsController {
 	 * @param model
 	 * @param req
 	 */
-	public static void carregarListaPersonagem(Model model, HttpServletRequest req, List<Personagem> lstPersonagem) {
+	public static List<Personagem> carregarListaPersonagem(Model model, HttpServletRequest req, List<Personagem> lstPersonagem) {
 		
 		if(lstPersonagem == null)
 		{
 			PersonagemDAO personagemDao = new PersonagemDAO(Utils.conexao(req));
 			lstPersonagem = personagemDao.lista();
 		}
-		model.addAttribute("lstPersonagem", lstPersonagem);
+		return lstPersonagem;
 	}
 }

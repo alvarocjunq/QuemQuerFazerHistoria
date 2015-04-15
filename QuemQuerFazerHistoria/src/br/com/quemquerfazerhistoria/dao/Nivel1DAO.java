@@ -25,7 +25,8 @@ public class Nivel1DAO {
 					+"		 tblPersonagem.PersonagemID,"
 					+"		 tblNivel1.Label,"
 					+"		 tblNivel1.Texto,"
-					+"		 CONCAT(tblPersonagem.Tratamento,' ',tblPersonagem.Descricao) AS Titulo,  "
+					+"		 tblPersonagem.Tratamento,"
+					+"		 tblPersonagem.Descricao, "
 					+"		 tblPersonagem.CaminhoImagem"
 					+" FROM  tblNivel1 INNER JOIN"
 					+"       tblPersonagem ON tblNivel1.PersonagemID = tblPersonagem.PersonagemID"
@@ -41,7 +42,7 @@ public class Nivel1DAO {
 				nivel1.setPersonagemid	(rs.getInt("PersonagemID"));
 				nivel1.setLabel			(rs.getString("Label"));
 				nivel1.setTexto			(rs.getString("Texto"));
-				nivel1.setTitulo		(rs.getString("Titulo"));
+				nivel1.setTitulo		(rs.getString("Tratamento").concat(" ".concat(rs.getString("Descricao"))));
 				nivel1.setCaminhoimagem(rs.getString("CaminhoImagem"));
 				
 				lstPersonagem.add(nivel1);
