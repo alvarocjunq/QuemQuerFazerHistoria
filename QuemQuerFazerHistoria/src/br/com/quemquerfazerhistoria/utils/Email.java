@@ -6,6 +6,7 @@ import java.util.Properties;
 import javax.activation.DataHandler;
 import javax.activation.FileDataSource;
 import javax.mail.Address;
+import javax.mail.Authenticator;
 import javax.mail.BodyPart;
 import javax.mail.Message;
 import javax.mail.MessagingException;
@@ -25,7 +26,7 @@ public class Email {
 	 * @param remetente
 	 * Separar os destinatarios por virgula
 	 */
-	public static boolean enviaEmail(String remetente, String assunto, String mensagem, File anexo) {
+	public static boolean enviaEmail(final String remetente, final String assunto, String mensagem, File anexo) {
 		Properties props = new Properties();
 		final Utils utils = new Utils();
 		/** Parametros de conexao com servidor Gmail */
@@ -35,26 +36,27 @@ public class Email {
 	    props.put("mail.smtp.password", "password");
 	    props.put("mail.smtp.port", "587");
 	    props.put("mail.smtp.auth", true);
+	    
+	    try{
 
-		Session session = Session.getDefaultInstance(props,
-				new javax.mail.Authenticator() {
-					protected PasswordAuthentication getPasswordAuthentication() {
-						return new PasswordAuthentication(utils
-								.getProp("emailadministrador"), utils
-								.getProp("senhaemailadministrador"));
-					}
-				});
-
-		session.setDebug(true);
-
-		try {
+			Authenticator auth = new Authenticator() {
+				protected PasswordAuthentication getPasswordAuthentication() {
+					return new PasswordAuthentication(
+							utils.getProp("emailadministrador"),
+							utils.getProp("senhaemailadministrador"));
+				}
+			};
+	    
+			Session session = Session.getDefaultInstance(props, auth);
+		
+			session.setDebug(true);
 
 			Message message = new MimeMessage(session);
 			Multipart mp = new MimeMultipart();
 			MimeBodyPart parteTexto = new MimeBodyPart();
 			
 			//-----------------
-		    // Conteúdo da mensagem
+		    // Conteudo da mensagem
 			//-----------------
 			parteTexto.setText(mensagem);
 			mp.addBodyPart(parteTexto);
@@ -112,7 +114,7 @@ public class Email {
         	Log.setErro("Erro ao enviar email de: " + remetente);
         	Log.setErro("Assunto do e-mail: " + assunto);
         	Log.setErro("-----------------------");
-        	Log.setErro("0 - " + e.getMessage());
+        	Log.setErro("ERRO: - " + e.getMessage());
 			return false;
 		}
 	}

@@ -29,7 +29,7 @@
 
 		<!-- Copyright -->
 			<div class="copyright">
-				Desenvolvido por: <a href="http://www.quemquersolutions.com.br#destino">Quem Quer Solutions</a>
+				Quem Quer Solutions <a href="mailto:quemquersolutions@gmail.com">quemquersolutions@gmail.com</a>
 			</div>
 
 	</div>

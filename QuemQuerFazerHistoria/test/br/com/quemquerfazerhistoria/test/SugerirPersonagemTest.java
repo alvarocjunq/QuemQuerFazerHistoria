@@ -13,7 +13,7 @@ public class SugerirPersonagemTest {
 	@Test
 	public void sugerirUmPersonagemEnviaPorEmail() {
 		SugerirPersonagem sp = new SugerirPersonagem();
-		sp.setEmailremetente("alvarocjunq@teste.com");
+		sp.setEmailremetente("alvarocjunq@gmail.com");
 		sp.setPersonagem("Personagem teste");
 		sp.setDescricao("Descrição do personagem do usuário");
 		
