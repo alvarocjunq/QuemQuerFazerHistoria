@@ -36,13 +36,13 @@
 <div class="wrapper style2">
 	<section class="container">
 		<header class="major">
-			<h2>Escolha um personagem</h2>
+			<a name="destino" class="ancora"><h2>Escolha um personagem</h2></a>
 		</header>
 		
 		<div class="row no-collapse-1">
 			<c:forEach items="${lstPersonagem}" var="i">
 				<section class="4u">
-					<a href="pnivel1?p=${i.personagemid}" class="image feature" style="margin-top: 2em">
+					<a href="pnivel1?p=${i.personagemid}#destino" class="image feature" style="margin-top: 2em">
 						<img src="resources/imagens/historias/${i.caminhoimagem}" alt="" class="imagemshadow">
 					</a>
 					<b>${i.descricao}</b>

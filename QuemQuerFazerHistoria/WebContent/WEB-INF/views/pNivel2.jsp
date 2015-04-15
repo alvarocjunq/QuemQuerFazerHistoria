@@ -19,7 +19,7 @@
 		action += "&n1=" + n1;
 		action += "&n2=" + id;
 
-		obj.href = action;
+		obj.href = action+"#destino";
 	}
 </script>
 </head>
@@ -35,8 +35,10 @@
 
 <div id="main" class="wrapper style1">
 	<div class="container FontePadrao">
-
-		<qqf:cabecalhonivel texto="${textoanterior}" imagem="${caminhoimagem}" />
+		
+		<a name="destino" class="ancora">
+			<qqf:cabecalhonivel texto="${textoanterior}" imagem="${caminhoimagem}" />
+		</a>
 		
 		<h2>Escolha o meio da história ${titulo}</h2>
 		<div class="row no-collapse-1" >								

@@ -10,9 +10,9 @@
 						<div class="row">
 							<section class="6u">
 								<ul class="default">
-									<li><a href="comofunciona">Como funciona?</a></li>
-									<li><a href="penviarumdesenho">Quero enviar um desenho</a></li>
-									<li><a href="psugerirpersonagem">Sugerir um personagem</a></li>
+									<li><a href="comofunciona#destino">Como funciona?</a></li>
+									<li><a href="penviarumdesenho#destino">Quero enviar um desenho</a></li>
+									<li><a href="psugerirpersonagem#destino">Sugerir um personagem</a></li>
 								</ul>
 							</section>
 							<section class="6u">
@@ -29,7 +29,7 @@
 
 		<!-- Copyright -->
 			<div class="copyright">
-				Desenvolvido por: <a href="http://www.quemquersolutions.com.br">Quem Quer Solutions</a>
+				Desenvolvido por: <a href="http://www.quemquersolutions.com.br#destino">Quem Quer Solutions</a>
 			</div>
 
 	</div>

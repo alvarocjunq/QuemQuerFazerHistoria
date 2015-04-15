@@ -17,7 +17,7 @@
 		action += "&n1=" + id;
 // 		action += "&r=" + r;
 
-		obj.href = action;
+		obj.href = action+"#destino";
 	}
 </script>
 
@@ -33,7 +33,9 @@
 <div id="main" class="wrapper style1">
 	<div class="container FontePadrao">
 
-		<qqf:cabecalhonivel texto="${textoanterior}" imagem="${caminhoimagem}" />
+		<a name="destino" class="ancora">
+			<qqf:cabecalhonivel texto="${textoanterior}" imagem="${caminhoimagem}" />
+		</a>
 		
 		<h2>Escolha o início da história ${titulo}</h2>
 <!-- 		<h3>Ou <a href="" onclick="onSubmit(0,this,1)" class="link">clique aqui</a> para escolhermos um pra você</h3><br> -->

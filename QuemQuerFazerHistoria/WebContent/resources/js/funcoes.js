@@ -30,25 +30,25 @@ function onVoltar(destino, obj)
 {
 	switch (destino) {
 	case 'home':
-		obj.href = "aHome";
+		obj.href = "aHome#destino";
 		break;
 	case 'nivel1':
 		var p = getQueryString("p");
-		obj.href = "pnivel1?p=" + p;
+		obj.href = "pnivel1?p=" + p + "#destino";
 		break;
 	case 'nivel2':
 		var p = getQueryString("p");
 		var n1 = getQueryString("n1");
-		obj.href = "pnivel2?p="+p+"&n1="+n1;
+		obj.href = "pnivel2?p="+p+"&n1="+n1+"#destino";
 		break;
 	case 'nivel3':
 		var p = getQueryString("p");
 		var n1 = getQueryString("n1");
 		var n2 = getQueryString("n2");
-		obj.href = "pnivel3?p="+p+"&n1="+n1+"&n2="+n2;
+		obj.href = "pnivel3?p="+p+"&n1="+n1+"&n2="+n2+"#destino";
 		break;
 	default:
-		obj.href = "aHome";
+		obj.href = "aHome#destino";
 		break;
 	}
 }

@@ -20,7 +20,7 @@
 			<div id="sidebar" class="4u sidebar">
 				<section>
 					<div class="row half">
-							<a href="resources/imagens/comofunciona.jpg" target="_blank" class="image feature">
+							<a href="resources/imagens/comofunciona.jpg#destino" target="_blank" class="image feature">
 								<img src="resources/imagens/comofunciona.jpg" alt="" class="" />
 							</a>
 					</div>

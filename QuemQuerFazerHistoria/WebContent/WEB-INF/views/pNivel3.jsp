@@ -21,7 +21,7 @@ function onSubmit(id, obj)
 	action += "&n2=" + n2;
 	action += "&n3=" + id;
 	
-	obj.href = action;
+	obj.href = action+"#destino";
 }
 </script>
 </head>
@@ -36,7 +36,9 @@ function onSubmit(id, obj)
 <div id="main" class="wrapper style1">
 	<div class="container FontePadrao">
 
-		<qqf:cabecalhonivel texto="${textoanterior}" imagem="${caminhoimagem}" />
+		<a name="destino" class="ancora">
+			<qqf:cabecalhonivel texto="${textoanterior}" imagem="${caminhoimagem}" />
+		</a>
 		
 		<h2>Escolha o final da história ${titulo}</h2>
 		<div class="row no-collapse-1" >								

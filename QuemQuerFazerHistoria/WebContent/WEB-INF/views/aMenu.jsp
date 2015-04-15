@@ -9,17 +9,17 @@
 	<!-- Nav -->
 		<nav id="nav">
 			<ul>
-				<li><a href="aHome" class="menu menushadow">Home</a></li>
+				<li><a href="aHome#destino" class="menu menushadow">Home</a></li>
 				<li>
 					<a href="" style="font-weight: bold">Personagens</a>
 					<ul>
 						<c:forEach items="${lstPersonagem}" var="i" varStatus="id">
-							<li><a  href="pnivel1?p=${i.personagemid}">${i.descricao}</a></li>
+							<li><a  href="pnivel1?p=${i.personagemid}#destino">${i.descricao}</a></li>
 						</c:forEach>
 					</ul>
 				</li>
 				<li>
-					<a href="historiarandom" style="text-shadow: 0 0 0.2em #000, 0 0 0.2em #000, 0 0 0.2em #000;" class="menu" >
+					<a href="historiarandom#destino" style="text-shadow: 0 0 0.2em #000, 0 0 0.2em #000, 0 0 0.2em #000;" class="menu" >
 						Gerar história aleatória
 					</a>
 				</li>

@@ -8,7 +8,7 @@
 
 <script type="text/javascript">
 	function onSubmit() {
-		f1.action = "aHome";
+		f1.action = "aHome#destino";
 		f1.submit();
 	}
 </script>
@@ -26,7 +26,7 @@
 		
 		<section>
 			<header class="major">
-				<h2>História gerada ${objHistoria.titulo}</h2>
+				<a name="destino" class="ancora"><h2>História gerada ${objHistoria.titulo}</h2></a>
 			</header>
 		
 			<br>
